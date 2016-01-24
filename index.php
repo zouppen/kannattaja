@@ -48,7 +48,7 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
         koneellisesti. Rajapinta sijaitsee tässä osoitteessa eli
         <tt>http://kannatus.liittovaltio.fi/</tt>. Käytä UTF-8 -koodausta
         nimissä. Katso tarvittaessa
-        <a href="?puolue=Piraattipuolue&syntynyt=1983-03-28&etunimet=Ville%20Petteri&sukunimi=Virtanen&selvennys=Ville%20Virtanen&kotikunta=Lepp%C3%A4virta">esimerkki.</a>
+        <a href="?puolue=Piraattipuolue&syntynyt=1983-03-28&etunimet=Ville%20Petteri&sukunimi=Virtanen&selvennys=Ville%20Virtanen&kotikunta=Lepp%C3%A4virta">esimerkki</a>.
         Tarvitset vielä seuraavat GET-muuttujat mukaan pyyntöön:
     </p>
     <table>
