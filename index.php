@@ -11,7 +11,8 @@ function replace_fdf($subject, $items) {
     return $subject;
 }
 
-header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 86400));
+$now = time();
+header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('tomorrow', $now)));
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Origin: *');
 
@@ -65,8 +66,6 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
 <?php
     exit(0);
 }
-
-$now = time();
 
 // Fill form with data array
 $tmpfile = tempnam(sys_get_temp_dir(), '');
