@@ -21,13 +21,14 @@ foreach ([
     'sukunimi' => 'Sukunimi (esim. Virtanen)',
     'selvennys' => 'Nimenselvennys (esim. Ville Virtanen)',
     'kotikunta' => 'Henkilön kotikunta',
-    'paikka' => 'Allekirjoituspaikka (oletuksena sama kuin kotikunta)'
+    'paikka' => 'Allekirjoituspaikka (ei pakollinen, oletuksena sama kuin kotikunta)'
 ] as $key => $help) {
     if (array_key_exists($key, $_GET)) continue;
     $missing[$key] = $help;
 }
 
-if (count($missing) !== 0) {
+// FIXME Not very proud of this, should use proper argument parser.
+if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka', $missing))) {
     http_response_code(400);
 ?>
 <!DOCTYPE html>
@@ -75,7 +76,7 @@ file_put_contents($tmpfile, replace_fdf(file_get_contents(__DIR__.'/template.fdf
     '$SUKUNIMI' => $_GET['sukunimi'],
     '$KOKONIMI' => $_GET['selvennys'],
     '$KOTIKUNTA' => $_GET['kotikunta'],
-    '$PAIKKA' => $_GET['paikka'],
+    '$PAIKKA' => $_GET[array_key_exists('paikka', $_GET) ? 'paikka' : 'kotikunta'],
     '$YN' => date('y',$now),
     '$MN' => date('m',$now),
     '$DN' => date('d',$now),
