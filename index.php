@@ -12,6 +12,8 @@ function replace_fdf($subject, $items) {
 }
 
 header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 86400));
+header('Access-Control-Allow-Methods: GET');
+header('Access-Control-Allow-Origin: *');
 
 $missing = [];
 foreach ([
