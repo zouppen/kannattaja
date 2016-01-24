@@ -46,7 +46,7 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
     <p>
         Tällä palvelulla voi muodostaa haluamasi puolueen kannattajakortteja
         koneellisesti. Rajapinta sijaitsee tässä osoitteessa eli
-        <tt>http://kannatus.liittovaltio.fi/</tt>. Käytä UTF-8 -koodausta
+        <tt>https://kannatus.liittovaltio.fi/</tt>. Käytä UTF-8 -koodausta
         nimissä. Katso tarvittaessa
         <a href="?puolue=Piraattipuolue&syntynyt=1983-03-28&etunimet=Ville%20Petteri&sukunimi=Virtanen&selvennys=Ville%20Virtanen&kotikunta=Lepp%C3%A4virta">esimerkki</a>.
         Tarvitset vielä seuraavat GET-muuttujat mukaan pyyntöön:
@@ -60,7 +60,7 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
 ?>
     </table>
     <address>
-        Palvelun on toteuttanut <a href="http://zouppen.iki.fi">Joel
+        Palvelun on toteuttanut <a href="https://zouppen.iki.fi">Joel
         Lehtonen</a> Piraattipuolueen kannattajakorttien keräilyä varten.
         Palvelua saa käyttää koneellisesti muilta sivuilta ja minkä tahansa
         puolueeksi pyrkivän yhdistyksen toimesta. Älkää sikailko, bannia
