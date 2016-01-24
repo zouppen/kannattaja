@@ -13,6 +13,55 @@ function replace_fdf($subject, $items) {
 
 header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 86400));
 
+$missing = [];
+foreach ([
+    'puolue' => 'Puolueen nimi (ilman ry:tä, esim. Piraattipuolue)',
+    'syntynyt' => 'Syntymäaika ISO-8601-muodossa (esim. 1983-03-28)',
+    'etunimet' => 'Etunimet (esim. Ville Petteri)',
+    'sukunimi' => 'Sukunimi (esim. Virtanen)',
+    'selvennys' => 'Nimenselvennys (esim. Ville Virtanen)',
+    'kotikunta' => 'Henkilön kotikunta',
+    'paikka' => 'Allekirjoituspaikka (oletuksena sama kuin kotikunta)'
+] as $key => $help) {
+    if (array_key_exists($key, $_GET)) continue;
+    $missing[$key] = $help;
+}
+
+if (count($missing) !== 0) {
+    http_response_code(400);
+?>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8">
+    <title>Puolueen kannattajakorttien muodostaja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Puolueen kannattajakorttien muodostaja</h1>
+    <p>Tällä palvelulla voi muodostaa puolueen kannattajakortteja koneellisesti. Seuraavat GET-muuttujat puuttuvat pyynnöstä: </p>
+    <table>
+        <tr><th>Muuttuja</th><th>Selite</th></tr>
+<?php
+    foreach ($missing as $key => $help) {
+        echo '        <tr><td>'.$key.'</td><td>'.$help."</td></tr>\n";
+    }
+?>
+    </table>
+    <address>
+        Palvelun on toteuttanut <a href="http://zouppen.iki.fi">Joel
+        Lehtonen</a> Piraattipuolueen kannattajakorttien keräilyä varten.
+        Palvelua saa käyttää koneellisesti muilta sivuilta ja myös muiden
+        puolueiksi pyrkivien yhdistysten toimesta. Älkää sikailko, bannia
+        tulee. <a href="https://github.com/zouppen/kannattaja">Lähdekoodit</a>
+        löytyvät GitHubista.
+    </address>
+</body>
+</html>
+<?php
+    exit(0);
+}
+
 $now = time();
 
 // Fill form with data array
