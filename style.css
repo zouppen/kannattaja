@@ -17,23 +17,25 @@ h1 {
     color: #B300B3;
 }
 
-table {
-    border-collapse: collapse;
+label {
+    display: inline-block;
+    width: 10em;
 }
 
-th {
-    background-color: #B300B3;
-    color: white;
-    text-align: left;
+.line input {
+    width: 10em;
 }
 
-th, td {
-    border: thin solid #B300B3;
-    padding: 0.2em 0.5em;
+.shorter input {
+    width: 7em;
 }
 
-tr:nth-child(odd) {
-    background-color: #E5E4EB;
+.longer input {
+    width: 20em;
+}
+
+#etunimi1, #etunimi2 {
+    visibility: hidden;
 }
 
 address {
