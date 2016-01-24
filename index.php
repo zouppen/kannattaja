@@ -4,7 +4,7 @@ function replace_fdf($subject, $items) {
     foreach ($items as $k => $v) {
         $subject = str_replace(
             $k,
-            chr(0xFE).chr(0xFF).mb_convert_encoding($v,'UTF-16BE', 'UTF-8'),
+            chr(0xFE).chr(0xFF).mb_convert_encoding(preg_replace('/[()$]/','', $v),'UTF-16BE', 'UTF-8'),
             $subject
         );
     }
