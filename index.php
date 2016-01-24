@@ -63,7 +63,7 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
         Palvelun on toteuttanut <a href="http://zouppen.iki.fi">Joel
         Lehtonen</a> Piraattipuolueen kannattajakorttien keräilyä varten.
         Palvelua saa käyttää koneellisesti muilta sivuilta ja minkä tahansa
-        puolueeksi pyrkivän yhdistysten toimesta. Älkää sikailko, bannia
+        puolueeksi pyrkivän yhdistyksen toimesta. Älkää sikailko, bannia
         tulee. <a href="https://github.com/zouppen/kannattaja">Lähdekoodit</a>
         löytyvät GitHubista.
     </address>
