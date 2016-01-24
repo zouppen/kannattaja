@@ -19,7 +19,6 @@ header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', strtotime('tomorrow', $now)))
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Origin: *');
 
-$missing = [];
 foreach ([
     'party',
     'fname',
@@ -30,13 +29,9 @@ foreach ([
     'location',
 ] as $key) {
     if (array_key_exists($key, $_GET)) continue;
-    array_push($missing, $key);
-}
-
-// FIXME Not very proud of this, should use proper argument parser.
-if (count($missing) !== 0) {
     http_response_code(400);
-    readfile(__DIR__.'/template.html');
+    header('Content-type: text/plain');
+    print("Missing field: ".$key."\n");
     exit(0);
 }
 
