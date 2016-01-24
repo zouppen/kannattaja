@@ -1,0 +1,104 @@
+%FDF-1.2
+%‚„œ”
+1 0 obj 
+<<
+/FDF 
+<<
+/Fields [
+<<
+/V ($YB)
+/T (pv3)
+>> 
+<<
+/V ($MB)
+/T (pv2)
+>> 
+<<
+/Kids [
+<<
+/V ($SUKUNIMI)
+/T (1)
+>>]
+/T (sukunimi)
+>> 
+<<
+/V ($DB)
+/T (pv1)
+>> 
+<<
+/Kids [
+<<
+/V ($ETUNIMI)
+/T (1)
+>>]
+/T (Etunimi)
+>> 
+<<
+/Kids [
+<<
+/V ($KOKONIMI)
+/T (1)
+>>]
+/T (Nimenselvennys)
+>> 
+<<
+/V ($PAIKKA)
+/T (paikka)
+>> 
+<<
+/V /
+/T (Sulje)
+>> 
+<<
+/Kids [
+<<
+/V ($PUOLUE)
+/T (1)
+>>]
+/T (Yhdistyksen_nimi)
+>> 
+<<
+/V /
+/T (Tulosta)
+>> 
+<<
+/Kids [
+<<
+/V ($KOTIKUNTA)
+/T (1)
+>>]
+/T (kotikunta)
+>> 
+<<
+/V ( 1\) \r Ä  T‰yt‰ lomake pienaakkosin. T‰yttˆkohdasta toiseen voit\r    siirty‰ tabulaattorilla tai hiirell‰.\r Ä  Fyll i blanketten med smÂ bokst‰ver. Du kan flytta dej mellan f‰lten med \r    tabtangenten.\r\r 2\) \r Ä  Kirjoittamasi tekstin pit‰‰ n‰ky‰ kokonaan t‰yttˆkent‰ss‰. T‰yttˆkenttiin \r    mahtuu enemm‰n teksti‰, jos k‰yt‰t pienaakkosia.\r Ä  Den skrivna texten skall synas i respektive f‰lt du valt.\r\r 3\)\r Ä  Lomakkeen t‰yttˆtekstit voit poistaa "Tyhjenn‰ lomake" -painikkeella.\r Ä  Texten i blankettens ifyllda f‰lt kan du avl‰gsna genom att trycka pÂ \r    "Tˆm blanketten" -knappen.\r\r 4\)\r Ä  Muistathan allekirjoittaa lomakkeen tulostettuasi sen.\r Ä  Efter att du printat blanketten kom ihÂg din underskrift.)
+/T (1bTekninen_ohje)
+>> 
+<<
+/V /
+/T (Tyhjenn‰_lomake)
+>> 
+<<
+/V /
+/T (Ohje)
+>> 
+<<
+/V ($YN)
+/T (pv6)
+>> 
+<<
+/V ($MN)
+/T (pv5)
+>> 
+<<
+/V ($DN)
+/T (pv4)
+>>]
+>>
+>>
+endobj 
+trailer
+
+<<
+/Root 1 0 R
+>>
+%%EOF
