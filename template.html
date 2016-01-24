@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <title>Puolueen kannattajakorttien muodostaja</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js" integrity="sha384-c4XWi4+MS7dBmCkPfB02+p/ExOF/ZBOfD2S4KR6mkmpBOg7IM6SUpA1KYZaVr7qE" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </head>
-<body>
+<body ng-app="FillApp"  ng-controller="FillController">
   <h1>Puolueen kannattajakorttien muodostaja</h1>
   <p>
     Tällä palvelulla voi muodostaa haluamasi puolueen kannattajakortteja
@@ -23,16 +25,16 @@
     </div>
     <div class="line longer">
       <label for="etunimet">Etunimet:</label>
-      <input id="etunimet" name="fname" autocomplete="given-name" type="text">
+      <input id="etunimet" ng-change="updateClar()" ng-model="fname" name="fname" autocomplete="given-name" type="text">
       <span>(luettele kaikki nimet)</span>
     </div>
     <div class="line">
       <label for="sukunimi">Sukunimi:</label>
-      <input id="sukunimi" name="lname" autocomplete="family-name" type="text">
+      <input id="sukunimi" ng-change="updateClar()" ng-model="lname" name="lname" autocomplete="family-name" type="text">
     </div>
     <div class="line">
       <label for="selvennys">Nimenselvennys:</label>
-      <input id="selvennys" name="clarification" type="text">
+      <input id="selvennys" ng-change="autoClarCheck()" ng-model="clar" name="clarification" type="text">
       <span>(käytetään allekirjoituksen alla)</span>
     </div>
     <div class="line">
@@ -41,11 +43,11 @@
     </div>
     <div class="line">
       <label for="kotikunta">Kotikunta:</label>
-      <input id="kotikunta" name="city" autocomplete="address-level2" type="text">
+      <input id="kotikunta" ng-change="updateLocation()" ng-model="city" name="city" autocomplete="address-level2" type="text">
     </div>
     <div class="line">
       <label for="paikka">Allekirjoituspaikka:</label>
-      <input id="paikka" name="location" type="text">
+      <input id="paikka" ng-change="autoLocationCheck()" ng-model="location" name="location" type="text">
     </div>
     <div class="line">
       <input type="reset" value="Tyhjennä">
