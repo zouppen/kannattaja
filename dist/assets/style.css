@@ -26,16 +26,22 @@ label {
     width: 10em;
 }
 
-.shorter input {
-    width: 7em;
-}
-
 .longer input {
     width: 20em;
 }
 
-#etunimi1, #etunimi2 {
-    visibility: hidden;
+/* PDF aspect ratio hack by Web_Designer at http://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css#answer-10441480 */
+#pdf {
+    width: 100%;
+    padding-bottom: 142%;
+    position: relative;
+}
+
+#pdf > iframe {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    border-width: 0;
 }
 
 address {

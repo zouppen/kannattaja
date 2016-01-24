@@ -18,7 +18,7 @@
     Tarvitset vielä seuraavat GET-muuttujat mukaan pyyntöön:
   </p>
 
-  <form method="get" action=".">
+  <form method="get" action="." target="card">
     <div class="line">
       <label for="party">Puolue:</label>
       <input id="party" name="party" type="text">
@@ -51,7 +51,7 @@
     </div>
     <div class="line">
       <input type="reset" value="Tyhjennä">
-      <input type="submit" value="Lataa kortti">
+      <input type="submit" value="Näytä kortti">
     </div>
   </form>
   <address>
@@ -63,5 +63,8 @@
     <a href="https://github.com/zouppen/kannattaja">Lähdekoodit</a>
     löytyvät GitHubista.
   </address>
+  <div id="pdf">
+    <iframe name="card" src="about:blank"></iframe>
+  </div>
 </body>
 </html>
