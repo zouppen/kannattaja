@@ -42,7 +42,8 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
 </head>
 <body>
     <h1>Puolueen kannattajakorttien muodostaja</h1>
-    <p>Tällä palvelulla voi muodostaa puolueen kannattajakortteja koneellisesti. Seuraavat GET-muuttujat puuttuvat pyynnöstä: </p>
+    <p>Tällä palvelulla voi muodostaa haluamasi puolueen kannattajakortteja
+    koneellisesti. Tarvitset vielä seuraavat GET-muuttujat mukaan pyyntöön:</p>
     <table>
         <tr><th>Muuttuja</th><th>Selite</th></tr>
 <?php
@@ -54,8 +55,8 @@ if (count($missing) !== 0 && !(count($missing) === 1 && array_key_exists('paikka
     <address>
         Palvelun on toteuttanut <a href="http://zouppen.iki.fi">Joel
         Lehtonen</a> Piraattipuolueen kannattajakorttien keräilyä varten.
-        Palvelua saa käyttää koneellisesti muilta sivuilta ja myös muiden
-        puolueiksi pyrkivien yhdistysten toimesta. Älkää sikailko, bannia
+        Palvelua saa käyttää koneellisesti muilta sivuilta ja minkä tahansa
+        puolueeksi pyrkivän yhdistysten toimesta. Älkää sikailko, bannia
         tulee. <a href="https://github.com/zouppen/kannattaja">Lähdekoodit</a>
         löytyvät GitHubista.
     </address>

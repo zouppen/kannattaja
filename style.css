@@ -1,0 +1,42 @@
+html {
+    background-color: #E5E4EB;
+}
+
+body {
+    margin: 1em auto;
+    max-width: 60em;
+    border: thin solid #C000C0;
+    background-color: white;
+    padding: 1em;
+    font-family: sans-serif;
+    color: black;
+}
+
+h1 {
+    margin-top: 0.1em;
+    color: #B300B3;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #B300B3;
+    color: white;
+    text-align: left;
+}
+
+th, td {
+    border: thin solid #B300B3;
+    padding: 0.2em 0.5em;
+}
+
+tr:nth-child(odd) {
+    background-color: #E5E4EB;
+}
+
+address {
+    margin-top: 2em;
+    color: gray;
+}
