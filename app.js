@@ -3,6 +3,7 @@ function fillController($scope) {
     $scope.fname = '';
     $scope.lname = '';
     $scope.city = '';
+    $scope.bday = '';
     var autoClar = true;
     var autoLocation = true;
 
@@ -26,7 +27,7 @@ function fillController($scope) {
     $scope.autoLocationCheck = function() {
 	autoLocation = $scope.location === defaultLocation();
     }
-    
+
     function defaultClar() {
 	return $scope.fname.split(' ', 1)[0] + ' ' + $scope.lname;
     }
