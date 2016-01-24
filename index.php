@@ -11,9 +11,7 @@ function replace_fdf($subject, $items) {
     return $subject;
 }
 
-function filenamize($input) {
-    return preg_replace('/[^a-z0-9-_]/','', str_replace(' ', '_', strtolower(iconv("UTF-8", "ASCII//TRANSLIT", $input))));
-}
+header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 86400));
 
 $now = time();
 
@@ -35,6 +33,5 @@ file_put_contents($tmpfile, replace_fdf(file_get_contents(__DIR__.'/template.fdf
 ]));
 
 header('Content-type: application/pdf');
-//header('Content-Disposition: attachment; filename="kannattajakortti-'.filenamize($_GET['kokonimi']).'.pdf"');
 passthru('pdftk '.__DIR__.'/original.pdf fill_form '.$tmpfile.' output -');
 unlink($tmpfile);
