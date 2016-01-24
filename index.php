@@ -19,7 +19,7 @@ header('Access-Control-Allow-Origin: *');
 $missing = [];
 foreach ([
     'puolue' => 'Puolueen nimi (ilman ry:tä, esim. Piraattipuolue)',
-    'syntynyt' => 'Syntymäaika ISO-8601-muodossa (esim. 1983-03-28)',
+    'syntynyt' => 'Syntymäaika ISO-8601 -muodossa (esim. 1983-03-28)',
     'etunimet' => 'Etunimet (esim. Ville Petteri)',
     'sukunimi' => 'Sukunimi (esim. Virtanen)',
     'selvennys' => 'Nimenselvennys (esim. Ville Virtanen)',
