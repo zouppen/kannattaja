@@ -10,6 +10,8 @@ function fillController($scope, $location) {
     // If there is party name in URL, fill it
     $scope.$on('$locationChangeSuccess', function(event) {
 	$scope.party = $location.path().substr(1);
+	// Focus straight to name if party is prefilled
+	($scope.party === '' ? party : fname).focus();
     });
     
     // The form fill feature works in the way it updates the secondary
