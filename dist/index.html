@@ -22,17 +22,12 @@
     </div>
     <div class="line longer">
       <label for="fname">Etunimet:</label>
-      <input id="fname" ng-model="fname" name="fname" autocomplete="given-name" ng-change="updateClar()" type="text" required>
+      <input id="fname" ng-model="fname" name="fname" autocomplete="given-name" type="text" required>
       <span>(luettele kaikki nimet)</span>
     </div>
     <div class="line">
       <label for="lname">Sukunimi:</label>
-      <input id="lname" ng-model="lname" name="lname" autocomplete="family-name" ng-change="updateClar()" type="text" required>
-    </div>
-    <div class="line longer">
-      <label for="clar">Nimenselvennys:</label>
-      <input id="clar" ng-model="clar" name="clarification" ng-change="autoClarCheck()" type="text" required>
-      <span>(käytetään allekirjoituksen alla)</span>
+      <input id="lname" ng-model="lname" name="lname" autocomplete="family-name" type="text" required>
     </div>
     <div class="line">
       <label for="bday">Syntymäaika:</label>

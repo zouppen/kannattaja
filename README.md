@@ -25,7 +25,6 @@ party | Piraattipuolue | Puolueen nimi ilman ry:tä
 bday | 1983-03-28 | Syntymäaika ISO-8601 -muodossa
 fname | Ville Petteri | Etunimet
 lname | Virtanen | Sukunimi
-clarification | Ville Virtanen | Nimenselvennys
 city | Leppävirta | Henkilön kotikunta
 location | Leppävirta | Allekirjoituspaikka, tavallisesti sama kuin kotikunta
 
