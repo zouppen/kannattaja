@@ -2,17 +2,18 @@
 <html lang="fi">
 <head>
   <meta charset="utf-8">
-  <title>Puolueen kannattajakorttien muodostaja</title>
+  <title>Puolueen kannattajakorttien esitäyttäjä</title>
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js" integrity="sha384-c4XWi4+MS7dBmCkPfB02+p/ExOF/ZBOfD2S4KR6mkmpBOg7IM6SUpA1KYZaVr7qE" crossorigin="anonymous"></script>
   <script src="assets/app.js"></script>
 </head>
 <body ng-app="FillApp"  ng-controller="FillController">
-  <h1>Puolueen kannattajakorttien muodostaja</h1>
+  <h1>Esitäytä ja allekirjoita puolueen kannattajakortti!</h1>
   <p>
     Tällä palvelulla voi täyttää helposti haluamasi puolueen
-    kannattajakortin. Täytä alla olevat tiedot, tulosta kortti ja
-    toimita se puolueen kannattajakortteja keräävälle henkilölle.
+    kannattajakortin. Täytä alla olevat tiedot, tulosta kortti,
+    <strong>allekirjoita</strong> se ja toimita se puolueen
+    kannattajakortteja keräävälle henkilölle.
   </p>
   <form method="get" action="." target="card">
     <div class="line">
@@ -28,7 +29,7 @@
       <label for="lname">Sukunimi:</label>
       <input id="lname" ng-model="lname" name="lname" autocomplete="family-name" ng-change="updateClar()" type="text">
     </div>
-    <div class="line">
+    <div class="line longer">
       <label for="clar">Nimenselvennys:</label>
       <input id="clar" ng-model="clar" name="clarification" ng-change="autoClarCheck()" type="text">
       <span>(käytetään allekirjoituksen alla)</span>
