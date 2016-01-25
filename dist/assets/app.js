@@ -35,5 +35,39 @@ function fillController($scope) {
     function defaultLocation() {
 	return $scope.city;
     }
+
+    $scope.clean = function() {
+	// Clean all but location and party
+	autoClar = true;
+	if ($scope.location === '') autoLocation = false;
+	$scope.fname = '';
+	$scope.lname = '';
+	$scope.clar = '';
+	$scope.city = '';
+	$scope.bday = '';
+	$scope.showPdf = false;
+	fname.focus();
+    }
+
+    document.getElementById('card').onload = function() {
+	// Suppressing the need for Firefox to print about:blank at
+	// page load.
+	if (!$scope.realSubmit) return;
+
+	// This is a hackish way for trying to print. Firefox with
+	// native pdf.js doesn't like it and needs some quirks.
+	try {
+	    // Trying to print causes browsers not supporting the
+	    // print go to catch block.
+	    card.print();
+	    // We are outside AngularJS, repaint
+	    $scope.$apply();
+	} catch (e) {
+	    // We don't support printing so showing the PDF instead
+	    $scope.showPdf = true;
+	    // We are outside AngularJS, repaint
+	    $scope.$apply();
+	}
+    };
 }
 angular.module('FillApp', []).controller('FillController', fillController);
