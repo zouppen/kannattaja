@@ -61,20 +61,22 @@ function fillController($scope, $location) {
 	// page load.
 	if (!$scope.realSubmit) return;
 
-	// This is a hackish way for trying to print. Firefox with
-	// native pdf.js doesn't like it and needs some quirks.
-	try {
-	    // Trying to print causes browsers not supporting the
-	    // print go to catch block.
-	    card.print();
-	    // We are outside AngularJS, repaint
-	    $scope.$apply();
-	} catch (e) {
-	    // We don't support printing so showing the PDF instead
-	    $scope.showPdf = true;
-	    // We are outside AngularJS, repaint
-	    $scope.$apply();
-	}
+	window.setTimeout(function() {
+	    // This is a hackish way for trying to print. Firefox with
+	    // native pdf.js doesn't like it and needs some quirks.
+	    try {
+		// Trying to print causes browsers not supporting the
+		// print go to catch block.
+		card.print();
+		// We are outside AngularJS, repaint
+		$scope.$apply();
+	    } catch (e) {
+		// We don't support printing so showing the PDF instead
+		$scope.showPdf = true;
+		// We are outside AngularJS, repaint
+		$scope.$apply();
+	    }
+	}, 100);
     };
 }
 
