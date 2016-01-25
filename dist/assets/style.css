@@ -42,6 +42,10 @@ label {
     width: 15em;
 }
 
+.longest input {
+    width: 20em;
+}
+
 /* PDF aspect ratio hack by Web_Designer at http://stackoverflow.com/questions/1495407/maintain-the-aspect-ratio-of-a-div-with-css#answer-10441480 */
 #pdf {
     margin-top: 1em;
