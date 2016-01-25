@@ -18,33 +18,33 @@
   <form method="get" action="." target="card">
     <div class="line">
       <label for="party">Puolue:</label>
-      <input id="party" ng-model="party" name="party" type="text">
+      <input id="party" ng-model="party" name="party" type="text" required>
     </div>
     <div class="line longer">
       <label for="fname">Etunimet:</label>
-      <input id="fname" ng-model="fname" name="fname" autocomplete="given-name" ng-change="updateClar()" type="text">
+      <input id="fname" ng-model="fname" name="fname" autocomplete="given-name" ng-change="updateClar()" type="text" required>
       <span>(luettele kaikki nimet)</span>
     </div>
     <div class="line">
       <label for="lname">Sukunimi:</label>
-      <input id="lname" ng-model="lname" name="lname" autocomplete="family-name" ng-change="updateClar()" type="text">
+      <input id="lname" ng-model="lname" name="lname" autocomplete="family-name" ng-change="updateClar()" type="text" required>
     </div>
     <div class="line longer">
       <label for="clar">Nimenselvennys:</label>
-      <input id="clar" ng-model="clar" name="clarification" ng-change="autoClarCheck()" type="text">
+      <input id="clar" ng-model="clar" name="clarification" ng-change="autoClarCheck()" type="text" required>
       <span>(käytetään allekirjoituksen alla)</span>
     </div>
     <div class="line">
       <label for="bday">Syntymäaika:</label>
-      <input id="bday" ng-model="bday" name="bday" autocomplete="bday" type="date">
+      <input id="bday" ng-model="bday" name="bday" autocomplete="bday" type="date" placeholder="vvvv-kk-pp" required>
     </div>
     <div class="line">
       <label for="city">Kotikunta:</label>
-      <input id="city" ng-change="updateLocation()" ng-model="city" name="city" autocomplete="address-level2" type="text">
+      <input id="city" ng-change="updateLocation()" ng-model="city" name="city" autocomplete="address-level2" type="text" required>
     </div>
     <div class="line">
       <label for="location">Allekirjoituspaikka:</label>
-      <input id="location" ng-change="autoLocationCheck()" ng-model="location" name="location" type="text">
+      <input id="location" ng-change="autoLocationCheck()" ng-model="location" name="location" type="text" required>
     </div>
     <div class="buttons">
       <button ng-click="realSubmit=true" type="submit">Näytä kortti</button>
