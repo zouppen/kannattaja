@@ -26,7 +26,7 @@ label {
     padding: 0.4em 0 0.4em 0.4em;
 }
 
-.line input {
+.line input, .line select {
     width: 10em;
 }
 
