@@ -41,10 +41,12 @@ foreach ([
 // Validate given birthday to be well-formed and from a person old
 // enough to vote.
 $bday_datetime = DateTime::createFromFormat('Y-m-d', $_GET['bday']);
-if ($bday_datetime === FALSE) bad_request("Birthday not in correct format");
+if ($bday_datetime === FALSE) bad_request(
+    "Syntymäajan muoto virheellinen. Käytä muotoa vvvv-kk-pp, esim 1983-03-28."
+);
 $bday = $bday_datetime->getTimestamp();
 if ($bday >= strtotime('-18 years +1 day', $now)) {
-    bad_request("Not eligible to vote, check birthday");
+    bad_request("Henkilön on oltava 18-vuotias. Tarkista syntymäaikasi!");
 }
 
 // Fill form with data array
