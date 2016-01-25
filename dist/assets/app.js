@@ -38,6 +38,7 @@ function fillController($scope, $location) {
 	$scope.city = '';
 	$scope.bday = '';
 	$scope.showPdf = false;
+	$scope.backendError = false;
 	fname.focus();
     }
 
@@ -50,6 +51,12 @@ function fillController($scope, $location) {
 	    // This is a hackish way for trying to print. Firefox with
 	    // native pdf.js doesn't like it and needs some quirks.
 	    try {
+		// Catch backend errors.
+		$scope.backendError = false;
+		if (card.document.contentType !== 'application/pdf') {
+		    $scope.backendError = true;
+		    throw "fail";
+		}
 		// Trying to print causes browsers not supporting the
 		// print go to catch block.
 		card.print();

@@ -42,11 +42,11 @@
       <input id="location" ng-change="autoLocationCheck()" ng-model="location" name="location" type="text" required>
     </div>
     <div class="buttons">
-      <button ng-click="realSubmit=true" type="submit">Näytä kortti</button>
+      <button ng-click="realSubmit=true; showPdf=false;" type="submit">Näytä kortti</button>
       <button ng-click="clean()" type="button">Tyhjennä</button>
     </div>
   </form>
-  <div id="pdf" ng-show="showPdf" ng-cloak>
+  <div id="pdf" ng-class="backendError ? 'backenderror' : ''" ng-show="showPdf" ng-cloak>
     <iframe id="card" name="card"></iframe>
   </div>
   <address>
