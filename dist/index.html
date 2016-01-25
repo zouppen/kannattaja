@@ -362,7 +362,8 @@
       <input id="location" ng-change="autoLocationCheck()" ng-model="location" name="location" type="text" required>
     </div>
     <div class="buttons">
-      <button ng-click="realSubmit=true; showPdf=false;" type="submit">Näytä kortti</button>
+      <button ng-click="realSubmit=true; showPdf=false;" type="submit">Näytä</button>
+      <button ng-click="realSubmit=true; showPdf=false;" type="submit" name="download">Tallenna PDF</button>
       <button ng-click="clean()" type="button">Tyhjennä</button>
     </div>
   </form>

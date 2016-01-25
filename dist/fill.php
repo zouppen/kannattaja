@@ -11,6 +11,10 @@ function replace_fdf($subject, $items) {
     return $subject;
 }
 
+function filenamize($input) {
+    return preg_replace('/[^a-z0-9-_]/','', str_replace(' ', '_', strtolower(iconv("UTF-8", "ASCII//TRANSLIT", $input))));
+}
+
 function bad_request($msg) {
     http_response_code(400);
     header('Content-type: text/plain');
@@ -66,5 +70,9 @@ file_put_contents($tmpfile, replace_fdf(file_get_contents(__DIR__.'/../template.
 ]));
 
 header('Content-type: application/pdf');
+if (array_key_exists('download', $_GET)) header(
+    'Content-Disposition: attachment; filename="kannattajakortti-'.
+    filenamize($_GET['fname'].' '.$_GET['lname']).'.pdf"'
+);
 passthru('pdftk '.__DIR__.'/../original.pdf fill_form '.$tmpfile.' output - flatten');
 unlink($tmpfile);
