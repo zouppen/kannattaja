@@ -11,6 +11,13 @@ function replace_fdf($subject, $items) {
     return $subject;
 }
 
+function bad_request($msg) {
+    http_response_code(400);
+    header('Content-type: text/plain');
+    print($msg."\n");
+    exit(0);
+}
+
 // UTF-8 support for uppercase
 mb_internal_encoding("UTF-8");
 
@@ -28,19 +35,25 @@ foreach ([
     'location',
 ] as $key) {
     if (array_key_exists($key, $_GET)) continue;
-    http_response_code(400);
-    header('Content-type: text/plain');
-    print("Missing field: ".$key."\n");
-    exit(0);
+    bad_request("Missing field: ".$key);
+}
+
+// Validate given birthday to be well-formed and from a person old
+// enough to vote.
+$bday_datetime = DateTime::createFromFormat('Y-m-d', $_GET['bday']);
+if ($bday_datetime === FALSE) bad_request("Birthday not in correct format");
+$bday = $bday_datetime->getTimestamp();
+if ($bday >= strtotime('-18 years +1 day', $now)) {
+    bad_request("Not eligible to vote, check birthday");
 }
 
 // Fill form with data array
 $tmpfile = tempnam(sys_get_temp_dir(), '');
 file_put_contents($tmpfile, replace_fdf(file_get_contents(__DIR__.'/../template.fdf'), [
     '$PUOLUE' => strtoupper($_GET['party']).' RY',
-    '$YB' => substr($_GET['bday'], 0, 4),
-    '$MB' => substr($_GET['bday'], 5, 2),
-    '$DB' => substr($_GET['bday'], 8, 2),
+    '$YB' => date('Y',$bday),
+    '$MB' => date('m',$bday),
+    '$DB' => date('d',$bday),
     '$ETUNIMI' => mb_strtoupper($_GET['fname']),
     '$SUKUNIMI' => mb_strtoupper($_GET['lname']),
     '$KOTIKUNTA' => mb_strtoupper($_GET['city']),
