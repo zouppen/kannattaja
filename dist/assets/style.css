@@ -22,8 +22,20 @@ label {
     width: 10em;
 }
 
+.line {
+    padding: 0.4em 0 0.4em 0.4em;
+}
+
 .line input {
     width: 10em;
+}
+
+.line:nth-child(odd) {
+    background-color: #EEEDF4;
+}
+
+.buttons {
+    margin-top: 1em;
 }
 
 .longer input {
