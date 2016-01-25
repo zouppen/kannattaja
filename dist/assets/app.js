@@ -1,5 +1,5 @@
-fillController.$inject = ['$scope'];
-function fillController($scope) {
+fillController.$inject = ['$scope', '$location'];
+function fillController($scope, $location) {
     $scope.fname = '';
     $scope.lname = '';
     $scope.city = '';
@@ -7,6 +7,11 @@ function fillController($scope) {
     var autoClar = true;
     var autoLocation = true;
 
+    // If there is party name in URL, fill it
+    $scope.$on('$locationChangeSuccess', function(event) {
+	$scope.party = $location.path().substr(1);
+    });
+    
     // The form fill feature works in the way it updates the secondary
     // field using primary fields if the secondary field is not
     // modified. If secondary field is modified to match the
@@ -70,4 +75,10 @@ function fillController($scope) {
 	}
     };
 }
+
+config.$inject = ['$locationProvider'];
+function config($locationProvider,$compileProvider) {
+    $locationProvider.html5Mode(false);
+}
+
 angular.module('FillApp', []).controller('FillController', fillController);
